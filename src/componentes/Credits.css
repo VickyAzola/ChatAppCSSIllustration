@@ -1,0 +1,38 @@
+footer {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: .7rem;
+    color: rgb(168, 168, 168);
+    padding: 0 .5rem;
+    background-color: transparent;
+}
+
+@media only screen and (min-width: 1000px) {
+    footer {
+        text-align: left;
+    }
+}
+
+footer a {
+    margin-inline: .2rem;
+    font-weight: bold;
+    color: rgb(168, 168, 168);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: black;
+    cursor: pointer;
+}
+
+footer svg {
+    width: .8rem;
+    height: .8rem;
+    fill: rgb(168, 168, 168);
+    margin-right: .2rem;
+}
+
+footer a:hover svg, footer a:hover path {
+    fill: black;
+    cursor: pointer;
+}
