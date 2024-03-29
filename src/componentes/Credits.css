@@ -1,6 +1,7 @@
 footer {
     text-align: center;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     font-size: .7rem;
     color: rgb(168, 168, 168);
     padding: 0 .5rem;
@@ -10,6 +11,7 @@ footer {
 @media only screen and (min-width: 1000px) {
     footer {
         text-align: left;
+        margin-bottom: 0;
     }
 }
 
