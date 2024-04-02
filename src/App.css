@@ -54,22 +54,7 @@ main {
     right: 0;
     bottom: 0;
     z-index: -1;
-}
-
-.scale-up-horizontal-left {
-    animation: scale-up-horizontal-left 0.8s; 
-} 
-    
-@keyframes scale-up-horizontal-left{
-    0% {
-        transform: scaleX(.4);
-        transform-origin: left center;
-    }
-    100% {
-        transform: scaleX(1);
-        transform-origin: left center;
-    }
-}
+}
 
 
 @media only screen and (min-width: 700px) {
@@ -110,6 +95,23 @@ main {
         bottom: 0;
         z-index: -1;
     }
+
+
+   .scale-up-horizontal-left {
+    animation: scale-up-horizontal-left 0.8s; 
+    } 
+    
+   @keyframes scale-up-horizontal-left{
+    0% {
+        transform: scaleX(.4);
+        transform-origin: left center;
+    }
+    100% {
+        transform: scaleX(1);
+        transform-origin: left center;
+    }
+   }
+
 }
 
 @media only screen and (min-width: 1000px) {
