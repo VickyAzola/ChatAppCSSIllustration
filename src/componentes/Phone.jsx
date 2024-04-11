@@ -31,7 +31,7 @@ function Phone() {
                 </button>
             </header>
 
-            <section className='main-bg-section'>
+            <div className='main-bg-section'>
                 <div className='block-1'>
                     <p className='p-violet'>That sounds great. I&#39;d be happy with that.</p>
                     <p className='p-violet'>Could you send over some pictures of your dog, please?</p>
@@ -74,7 +74,7 @@ function Phone() {
                     </button>
                 </div>
 
-            </section>
+            </div>
         </article>
         </>
     )
