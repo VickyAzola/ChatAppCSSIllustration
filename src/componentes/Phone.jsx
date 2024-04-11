@@ -66,7 +66,7 @@ function Phone() {
                 </div>
 
                 <div className='type-section'>
-                    <p aria-label='Click to type a message'>Type a message…</p>
+                    <p>Type a message…</p>
                     <button className='button' aria-label='Click to send the message'>
                         <svg fill='white' xmlns="http://www.w3.org/2000/svg" height="15" viewBox="0 -960 960 960" width="15">
                             <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
