@@ -2,11 +2,12 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 4rem;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 4rem;
 }
 
-.bg-color-purple::before {
-    content: "";
+.bg-color-purple {
     background: linear-gradient(200deg, hsl(293, 74%, 56%), hsl(264, 100%, 61%));
     position: absolute;
     min-width: 50%;
@@ -19,14 +20,13 @@ main {
 
 .phone-Container {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .title-section {
     margin-top: 5rem;
     text-align: center;
-    position: relative;
-    z-index: 1;
+    max-width: 30rem;
 }
 
 .title {
@@ -44,108 +44,97 @@ main {
     margin-bottom: 3rem;
 }
 
-.bg-color-pink-mobile::before {
-    content: "";
+.bg-color-pink {
     background: hsla(276, 100%, 81%, 0.090);
     position: absolute;
     min-width: 50%;
-    height: 60vh;
+    height: 70vh;
     border-radius: 100% 0% 100% 0% / 52% 100% 0% 48% ;
     right: 0;
     bottom: 0;
     z-index: -1;
-}
-
-
-@media only screen and (min-width: 700px) {
-    main {
-        margin-top: 8rem;
-    }
-
-    .bg-color-purple::before {
-        min-width: 80vw;
-        height: 55vh;
-        border-bottom-right-radius: 100%;
-        border-bottom-left-radius: 100%;
-        left: -30%;
-        top: 0;
-        z-index: -1;
-    }
-
-    .title-section {
-        max-width: 30rem;
-    }
-
-    .description {
-        margin-bottom: 2rem;
-    }
-
-    .bg-color-pink-mobile::before {
-        display: none;
-    }
-    
-    .bg-color-pink-desktop::before {
-        content: "";
-        background: hsla(276, 100%, 81%, 0.090);
-        position: absolute;
-        min-width: 50%;
-        height: 60vh;
-        border-radius: 100% 0% 100% 0% / 52% 100% 0% 48% ;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-    }
-
-
-   .scale-up-horizontal-left {
-    animation: scale-up-horizontal-left 0.8s; 
-    } 
-    
-   @keyframes scale-up-horizontal-left{
-    0% {
-        transform: scaleX(.4);
-        transform-origin: left center;
-    }
-    100% {
-        transform: scaleX(1);
-        transform-origin: left center;
-    }
-   }
-
 }
 
-@media only screen and (min-width: 1000px) {
+/*Animations*/
 
+.scale-up-center {
+    animation: scale-up-center 0.8s; 
+} 
+
+@keyframes scale-up-center { 
+    0% {
+        transform: scale(.5)
+    } 
+    100% {
+        transform: scale(1)
+    } 
+}
+
+.scale-in-br {
+	animation: scale-in-br 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-br {
+    0% {
+        transform: scale(0);
+        transform-origin: 100% 100%;
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        transform-origin: 100% 100%;
+        opacity: 1;
+    }
+}
+
+.scale-in-tl {
+	animation: scale-in-tl 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-tl {
+    0% {
+        transform: scale(0);
+        transform-origin: 0% 0%;
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        transform-origin: 0% 0%;
+        opacity: 1;
+    }
+}
+
+/*Desktop*/
+
+@media only screen and (min-width: 1000px) {
     main {
-        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        min-height: 100vh;
         place-content: center;
         padding: 0;
-        margin-top: 0;
+        overflow: hidden;
     }
 
-    .bg-color-purple::before {
-        min-width: 43vw;
-        height: 90vh;
-        background: linear-gradient(200deg, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
-        border-bottom-right-radius: 100%;
-        border-bottom-left-radius: 100%;
-        left: -15%;
-        top: 0;
-        z-index: -1;
+    .bg-color-purple {
+        background: linear-gradient(200deg, hsl(293, 100%, 63%) 40%, hsl(264, 100%, 61%) 90%);
+        min-width: 35vw;
+        height: 85vh;
+        left: -5rem;
+        border-radius: 0 0 50rem 40rem;
+    }
+
+    .bg-color-pink {
+        min-width: 35vw;
+        height: 85vh;
+        right: -6rem;
+        border-radius: 50rem 40rem 0 0;
     }
 
     .phone-Container {
-        position: absolute;
-        left: 20%;
+        left: 40%;
     }
 
     .title-section {
-        margin-right: auto;
-        inset: 0;
-        margin-top: 0;
         text-align: left;
         max-width: 28rem;
     }
@@ -160,18 +149,5 @@ main {
     
     .description {
         padding-inline: 0;
-    }
-
-    .bg-color-pink-desktop::before  {
-        content: "";
-        background: hsla(276, 100%, 81%, 0.090);
-        position: absolute;
-        min-width: 40vw;
-        height: 90vh;
-        border-top-left-radius: 100%;
-        border-top-right-radius: 100%;
-        right: -15%;
-        bottom: 0;
-        z-index: -1;
     }
 }
